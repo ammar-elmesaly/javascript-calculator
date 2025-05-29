@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(14, 13, 13);
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.container {
+    text-align: left;
+}
+
+.result {
+    background-color: gray;
+    font-size: 38px;
+    font-family: monospace;
+    margin-left: 8px;
+    min-height: 58px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    margin: 8px;
+    border: none;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 26px;
+    border-radius: 50%;
+}
+
+.operation-button {
+    background-color: rgb(254, 160, 10);
+}
+
+.clear-button {
+    font-size: 18px;
+    background-color: gray;
+}

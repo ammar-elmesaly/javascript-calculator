@@ -1,0 +1,1 @@
+# Javascript calculator project for practicing
