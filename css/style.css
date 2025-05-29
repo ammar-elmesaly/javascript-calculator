@@ -14,18 +14,23 @@ body {
     font-size: 38px;
     font-family: monospace;
     margin-left: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     min-height: 58px;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 button {
-    width: 60px;
-    height: 60px;
+    width: clamp(28px, 15vw, 70px);
+    height: clamp(28px, 15vw, 70px);
     margin: 8px;
     border: none;
     background-color: rgb(51, 51, 51);
     color: white;
     font-size: 26px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .operation-button {
@@ -33,6 +38,12 @@ button {
 }
 
 .clear-button {
-    font-size: 18px;
+    font-size: 19px;
     background-color: gray;
+}
+
+.backspace-button {
+    background-color:  rgb(255,69,69);
+    border-radius: 20px;
+
 }

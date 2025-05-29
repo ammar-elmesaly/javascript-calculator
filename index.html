@@ -11,29 +11,31 @@
     </head>
     <body>
         <div class="container">
-            <div class="result">1+1=2</div>
-            <button class="calculator-button">1</button>
-            <button class="calculator-button">2</button>
-            <button class="calculator-button">3</button>
-            <button class="plus-button operation-button">+</button>
+            <div class="result"></div>
+            <button onclick="updateResult(1)" class="calculator-button">1</button>
+            <button onclick="updateResult(2)" class="calculator-button">2</button>
+            <button onclick="updateResult(3)" class="calculator-button">3</button>
+            <button onclick="updateResult('+')" class="plus-button operation-button">+</button>
             <br>
-            <button class="calculator-button">4</button>
-            <button class="calculator-button">5</button>
-            <button class="calculator-button">6</button>
-            <button class="minus-button operation-button">-</button>
+            <button onclick="updateResult(4)" class="calculator-button">4</button>
+            <button onclick="updateResult(5)" class="calculator-button">5</button>
+            <button onclick="updateResult(6)" class="calculator-button">6</button>
+            <button onclick="updateResult('-')" class="minus-button operation-button">-</button>
             <br>
-            <button class="calculator-button">7</button>
-            <button class="calculator-button">8</button>
-            <button class="calculator-button">9</button>
-            <button class="multiply-button operation-button">*</button>
+            <button onclick="updateResult(7)" class="calculator-button">7</button>
+            <button onclick="updateResult(8)" class="calculator-button">8</button>
+            <button onclick="updateResult(9)" class="calculator-button">9</button>
+            <button onclick="updateResult('*')" class="multiply-button operation-button">*</button>
             <br>
-            <button class="calculator-button">0</button>
-            <button class="calculator-button">.</button>
-            <button class="eval-button">=</button>
-            <button class="divide-button operation-button">/</button>
+            <button onclick="updateResult(0)" class="calculator-button">0</button>
+            <button onclick="updateResult('.')" class="calculator-button">.</button>
+            <button onclick="evaluateResult()" class="eval-button">=</button>
+            <button onclick="updateResult('/')" class="divide-button operation-button">/</button>
             <br>
-            <button class="clear-button">Clear</button>
-            <button class="backspace-button">s</button>
+            <button onclick="clearResult()" class="clear-button">C</button>
+            <button onclick="updateResult('(')" class="clear-button">(</button>
+            <button onclick="updateResult(')')" class="clear-button">)</button>
+            <button onclick="backspace()" class="backspace-button"><i class="bi bi-backspace-fill"></i></button>
         </div>
     </body>
 </html>
