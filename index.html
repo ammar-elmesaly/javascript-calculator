@@ -6,35 +6,36 @@
         <link rel="stylesheet" href="css/style.css">
         <!-- Bootstrap icon library -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.2.1/math.min.js"></script>
         <script src="js/script.js"></script>
         <title>Calculator</title>
     </head>
     <body>
         <div class="container">
             <div class="result"></div>
-            <button onclick="updateResult(1)" class="calculator-button">1</button>
-            <button onclick="updateResult(2)" class="calculator-button">2</button>
-            <button onclick="updateResult(3)" class="calculator-button">3</button>
-            <button onclick="updateResult('+')" class="plus-button operation-button">+</button>
+            <button onclick="insertValue(1)" class="calculator-button">1</button>
+            <button onclick="insertValue(2)" class="calculator-button">2</button>
+            <button onclick="insertValue(3)" class="calculator-button">3</button>
+            <button onclick="insertValue('+')" class="plus-button operation-button">+</button>
             <br>
-            <button onclick="updateResult(4)" class="calculator-button">4</button>
-            <button onclick="updateResult(5)" class="calculator-button">5</button>
-            <button onclick="updateResult(6)" class="calculator-button">6</button>
-            <button onclick="updateResult('-')" class="minus-button operation-button">-</button>
+            <button onclick="insertValue(4)" class="calculator-button">4</button>
+            <button onclick="insertValue(5)" class="calculator-button">5</button>
+            <button onclick="insertValue(6)" class="calculator-button">6</button>
+            <button onclick="insertValue('-')" class="minus-button operation-button">-</button>
             <br>
-            <button onclick="updateResult(7)" class="calculator-button">7</button>
-            <button onclick="updateResult(8)" class="calculator-button">8</button>
-            <button onclick="updateResult(9)" class="calculator-button">9</button>
-            <button onclick="updateResult('*')" class="multiply-button operation-button">*</button>
+            <button onclick="insertValue(7)" class="calculator-button">7</button>
+            <button onclick="insertValue(8)" class="calculator-button">8</button>
+            <button onclick="insertValue(9)" class="calculator-button">9</button>
+            <button onclick="insertValue('*')" class="multiply-button operation-button">*</button>
             <br>
-            <button onclick="updateResult(0)" class="calculator-button">0</button>
-            <button onclick="updateResult('.')" class="calculator-button">.</button>
+            <button onclick="insertValue(0)" class="calculator-button">0</button>
+            <button onclick="insertValue('.')" class="calculator-button">.</button>
             <button onclick="evaluateResult()" class="eval-button">=</button>
-            <button onclick="updateResult('/')" class="divide-button operation-button">/</button>
+            <button onclick="insertValue('/')" class="divide-button operation-button">/</button>
             <br>
             <button onclick="clearResult()" class="clear-button">C</button>
-            <button onclick="updateResult('(')" class="clear-button">(</button>
-            <button onclick="updateResult(')')" class="clear-button">)</button>
+            <button onclick="insertValue('(')" class="clear-button">(</button>
+            <button onclick="insertValue(')')" class="clear-button">)</button>
             <button onclick="backspace()" class="backspace-button"><i class="bi bi-backspace-fill"></i></button>
         </div>
     </body>
