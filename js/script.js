@@ -48,4 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
     window.evaluateResult = evaluateResult;
     window.backspace = backspace;
     window.clearResult = clearResult;
+
+    // Enable keyboard input
+    
+    document.addEventListener('keydown', keyboardInput);
+    
+    function keyboardInput(event) { 
+        if ("0123456789+*-.()".includes(event.key)) {
+            insertValue(event.key);
+        } else if (event.key === "Enter") {
+            evaluateResult();
+        } else if (event.key === "Backspace") {
+            backspace();
+        }
+    }
+
 });
