@@ -13,56 +13,55 @@
     <body>
         <div class="calculator-container">
             <div class="modes">
-                <div class="binary-mode">
-                    <span>Binary mode</span>
-                    <label class="switch">
-                        <input type="checkbox" class="binary-checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="hex-mode">
-                    <span>Hexadecimal mode</span>
-                    <label class="switch">
-                        <input type="checkbox" class="hex-checkbox">
-                        <span class="slider round"></span>
-                    </label>                
-                </div>
+                <span>Binary mode</span>
+                <label class="switch">
+                    <input type="checkbox" class="binary-checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span>Hexadecimal mode</span>
+                <label class="switch">
+                    <input type="checkbox" class="hex-checkbox">
+                    <span class="slider round"></span>
+                </label>                
             </div>
             <div class="result"></div>
             <button onclick="insertValue(1)" class="calculator-button">1</button>
             <button onclick="insertValue(2)" class="calculator-button binary-disabled">2</button>
             <button onclick="insertValue(3)" class="calculator-button binary-disabled">3</button>
             <button onclick="insertValue('+')" class="plus-button operation-button">+</button>
-            <button onclick="insertValue('A')" class="calculator-button hex-digit-button">A</button>
             <br>
             <button onclick="insertValue(4)" class="calculator-button binary-disabled">4</button>
             <button onclick="insertValue(5)" class="calculator-button binary-disabled">5</button>
             <button onclick="insertValue(6)" class="calculator-button binary-disabled">6</button>
             <button onclick="insertValue('-')" class="minus-button operation-button">-</button>
-            <button onclick="insertValue('B')" class="calculator-button hex-digit-button">B</button>
-
             <br>
             <button onclick="insertValue(7)" class="calculator-button binary-disabled">7</button>
             <button onclick="insertValue(8)" class="calculator-button binary-disabled">8</button>
             <button onclick="insertValue(9)" class="calculator-button binary-disabled">9</button>
             <button onclick="insertValue('*')" class="multiply-button operation-button">*</button>
-            <button onclick="insertValue('C')" class="calculator-button hex-digit-button">C</button>
-
             <br>
             <button onclick="insertValue(0)" class="calculator-button">0</button>
             <button onclick="insertValue('.')" class="calculator-button">.</button>
             <button onclick="evaluateResult()" class="eval-button">=</button>
             <button onclick="insertValue('/')" class="divide-button operation-button">/</button>
-            <button onclick="insertValue('D')" class="calculator-button hex-digit-button">D</button>
-
             <br>
             <button onclick="clearResult()" class="clear-button">C</button>
             <button onclick="insertValue('(')" class="clear-button">(</button>
             <button onclick="insertValue(')')" class="clear-button">)</button>
             <button onclick="backspace()" class="backspace-button operation-button"><i class="bi bi-backspace-fill"></i></button>
-            <button onclick="insertValue('E')" class="calculator-button hex-digit-button">E</button>
-            <br>
-            <button onclick="insertValue('F')" class="calculator-button hex-digit-button">F</button>
+            <div class="hex-container active-hex">
+                <button onclick="insertValue('A')" class="calculator-button hex-digit-button">A</button>
+                <br>
+                <button onclick="insertValue('B')" class="calculator-button hex-digit-button">B</button>
+                <br>
+                <button onclick="insertValue('C')" class="calculator-button hex-digit-button">C</button>
+                <br>
+                <button onclick="insertValue('D')" class="calculator-button hex-digit-button">D</button>
+                <br>
+                <button onclick="insertValue('E')" class="calculator-button hex-digit-button">E</button>
+                <br>
+                <button onclick="insertValue('F')" class="calculator-button hex-digit-button">F</button>
+            </div>
         </div>
     </body>
 </html>

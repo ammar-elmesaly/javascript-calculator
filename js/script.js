@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    let resultScreenCharLimit = 15;
     const resultScreen = document.querySelector('.result');
     let error = false;
 
-    function insertValue(value) {  // value could be a number or an operator
-        if (!error && resultScreen.textContent.length < 15) {
+    function insertValue(value) {  // Value could be a number or an operator
+        if (!error && resultScreen.textContent.length < resultScreenCharLimit) {
             resultScreen.textContent += value;
         }
     }
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         calculation = calculation.slice(0, 15);
                     }
                 } else if (isHex) {
-                    calculation = cleanFloat(math.evaluate(resultScreen.textContent));
+                    calculation = hexEval(resultScreen.textContent);
                 } else {
                     calculation = cleanFloat(math.evaluate(resultScreen.textContent));
                 }
@@ -41,9 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return decimalResult.toString(2);
     }
 
+    function hexEval(expr) {
+        let canonicalExpr = expr.replace(/\b[0-9a-fA-F]+\b/g, match => `BigInt("0x${match}")`);  // Meaning all hex numbers will be prefixed with 0x and BigInt because we are basically dealing with BIG ints here
+        console.log(canonicalExpr);
+      
+        // Evaluate using Function constructor (safe because we control the input structure)
+        const result = Function(`return (${canonicalExpr})`)();
+      
+        // Convert back to hex string
+        return result.toString(16).toUpperCase();
+    }
+
     function backspace() {
         if (!error) {
-            resultScreen.textContent = resultScreen.textContent.slice(0, -1);  // removes last character
+            resultScreen.textContent = resultScreen.textContent.slice(0, -1);  // Removes last character
         }
     }
 
@@ -119,32 +131,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateBinary() {
-        binaryButtonsDisabled = document.querySelectorAll('.binary-disabled');  // buttons that would be disabled in binary mode
+        binaryButtonsDisabled = document.querySelectorAll('.binary-disabled');  // Buttons that would be disabled in binary mode
         if (isBinary) {
             for (let i = 0; i < binaryButtonsDisabled.length; i++) {
-                binaryButtonsDisabled[i].classList.add('disabled');
+                binaryButtonsDisabled[i].classList.add('disabled-binary');
                 binaryButtonsDisabled[i].disabled = true;
             }
         } else {
             for (let i = 0; i < binaryButtonsDisabled.length; i++) {
-                binaryButtonsDisabled[i].classList.remove('disabled');
+                binaryButtonsDisabled[i].classList.remove('disabled-binary');
                 binaryButtonsDisabled[i].disabled = false;
             }
         }
     }
 
     function updateHex() {
-        operationButtonElements = document.querySelectorAll('.operation-button');
+        const operationButtonElements = document.querySelectorAll('.operation-button');
+        const hexContainerElement = document.querySelector('.hex-container');
         if (isHex) {
             for (let i = 0; i < operationButtonElements.length; i++) {
                 operationButtonElements[i].classList.add('shift-right');
             }
+            hexContainerElement.classList.add('active-hex');
+            resultScreen.classList.add('result-widen');
+            resultScreenCharLimit = 19;
+
         } else {
             for (let i = 0; i < operationButtonElements.length; i++) {
                 operationButtonElements[i].classList.remove('shift-right');
             }  
+            hexContainerElement.classList.remove('active-hex');
+            resultScreen.classList.remove('result-widen');
+            resultScreenCharLimit = 15;
+
         }
     }
+    
 
     updateBinary();
     updateHex();
