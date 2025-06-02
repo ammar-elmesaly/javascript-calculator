@@ -89,19 +89,22 @@ input:checked + .slider:before {
 
 .hex-container {
     position: absolute; 
-    left: 13.9rem;
-    -webkit-transition: 1s;
-    transition: 1s;
+    left: clamp(214px, 63%, 280px);
     top: -100%;
+}
+
+.hex-digit-button {
+    width: clamp(28px, 12.1vw, 56px);
+    height: clamp(28px, 12.1vw, 56px);
 }
 
 .active-hex {
     top: 10.7rem;
 }
 .shift-right {
-    -webkit-transform: translateX(133%);
-    -ms-transform: translateX(133%);
-    transform: translateX(133%);
+    -webkit-transform: translateX(clamp(10px, 18vw,88px));
+    -ms-transform: translateX(clamp(10px, 18vw,88px));
+    transform: translateX(clamp(10px, 18vw,88px));
 }
 .calculator-container {
     text-align: left;
@@ -116,7 +119,7 @@ input:checked + .slider:before {
     margin-top: 20px;
     margin-bottom: 20px;
     min-height: 58px;
-    width: 330px;
+    width: clamp(28px, 79vw, 330px);
     border-radius: 8px;
     padding: 5px;
     -webkit-transition: 0.5s;
@@ -124,7 +127,8 @@ input:checked + .slider:before {
 }
 
 .result-widen {
-    width: 434px;
+    /* width: 434px; */
+    width: clamp(28px, 89vw, 434px);
 }
 
 button {

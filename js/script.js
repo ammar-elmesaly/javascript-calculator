@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hexInputElement = document.querySelector('.hex-checkbox');
     let isBinary = binaryInputElement.checked;    ;
     let isHex = hexInputElement.checked;
+    let transitionActivated = false;
 
     binaryInputElement.addEventListener('click', () => {
         isBinary = binaryInputElement.checked;
@@ -124,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isHex) {
             isBinary = false;
             binaryInputElement.checked = false;
+            if (!transitionActivated) {
+                activateTransition();
+            }
         }
         updateBinary();
         updateHex();
@@ -166,7 +170,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     }
-    
+
+    // Activates transition delay late because when you load the website the hex digit column is visible
+    function activateTransition() {
+        document.querySelector('.hex-container').style['-webkit-transition'] = '1s';
+        document.querySelector('.hex-container').style['transition'] = '1s';
+        transitionActivated = true;
+    }
 
     updateBinary();
     updateHex();
