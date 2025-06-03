@@ -26,42 +26,42 @@
             </div>
             <div class="result"></div>
             <div class="buttons-container">
-                <button onclick="insertValue(1)" class="calculator-button">1</button>
-                <button onclick="insertValue(2)" class="calculator-button binary-disabled">2</button>
-                <button onclick="insertValue(3)" class="calculator-button binary-disabled">3</button>
-                <button onclick="insertValue('+')" class="plus-button operation-button">+</button>
+                <button data-value="1" class="calculator-button">1</button>
+                <button data-value="2" class="calculator-button binary-disabled">2</button>
+                <button data-value="3" class="calculator-button binary-disabled">3</button>
+                <button data-value="+" class="calculator-button plus-button operation-button">+</button>
                 <br>
-                <button onclick="insertValue(4)" class="calculator-button binary-disabled">4</button>
-                <button onclick="insertValue(5)" class="calculator-button binary-disabled">5</button>
-                <button onclick="insertValue(6)" class="calculator-button binary-disabled">6</button>
-                <button onclick="insertValue('-')" class="minus-button operation-button">-</button>
+                <button data-value="4" class="calculator-button binary-disabled">4</button>
+                <button data-value="5" class="calculator-button binary-disabled">5</button>
+                <button data-value="6" class="calculator-button binary-disabled">6</button>
+                <button data-value="-" class="calculator-button minus-button operation-button">-</button>
                 <br>
-                <button onclick="insertValue(7)" class="calculator-button binary-disabled">7</button>
-                <button onclick="insertValue(8)" class="calculator-button binary-disabled">8</button>
-                <button onclick="insertValue(9)" class="calculator-button binary-disabled">9</button>
-                <button onclick="insertValue('*')" class="multiply-button operation-button">*</button>
+                <button data-value="7" class="calculator-button binary-disabled">7</button>
+                <button data-value="8" class="calculator-button binary-disabled">8</button>
+                <button data-value="9" class="calculator-button binary-disabled">9</button>
+                <button data-value="*" class="calculator-button multiply-button operation-button">*</button>
                 <br>
-                <button onclick="insertValue(0)" class="calculator-button">0</button>
-                <button onclick="insertValue('.')" class="calculator-button">.</button>
-                <button onclick="evaluateResult()" class="eval-button">=</button>
-                <button onclick="insertValue('/')" class="divide-button operation-button">/</button>
+                <button data-value="0" class="calculator-button">0</button>
+                <button data-value="." class="calculator-button">.</button>
+                <button class="eval-button">=</button>
+                <button data-value="/" class="calculator-button divide-button operation-button">/</button>
                 <br>
-                <button onclick="clearResult()" class="clear-button">C</button>
-                <button onclick="insertValue('(')" class="clear-button">(</button>
-                <button onclick="insertValue(')')" class="clear-button">)</button>
-                <button onclick="backspace()" class="backspace-button operation-button"><i class="bi bi-backspace-fill"></i></button>
+                <button class="clear-button">C</button>
+                <button data-value="(" class="calculator-button">(</button>
+                <button data-value=")" class="calculator-button">)</button>
+                <button class="backspace-button operation-button"><i class="bi bi-backspace-fill"></i></button>
                 <div class="hex-container active-hex">
-                    <button onclick="insertValue('A')" class="calculator-button hex-digit-button">A</button>
+                    <button data-value="A" class="calculator-button hex-digit-button">A</button>
                     <br>
-                    <button onclick="insertValue('B')" class="calculator-button hex-digit-button">B</button>
+                    <button data-value="B" class="calculator-button hex-digit-button">B</button>
                     <br>
-                    <button onclick="insertValue('C')" class="calculator-button hex-digit-button">C</button>
+                    <button data-value="C" class="calculator-button hex-digit-button">C</button>
                     <br>
-                    <button onclick="insertValue('D')" class="calculator-button hex-digit-button">D</button>
+                    <button data-value="D" class="calculator-button hex-digit-button">D</button>
                     <br>
-                    <button onclick="insertValue('E')" class="calculator-button hex-digit-button">E</button>
+                    <button data-value="E" class="calculator-button hex-digit-button">E</button>
                     <br>
-                    <button onclick="insertValue('F')" class="calculator-button hex-digit-button">F</button>
+                    <button data-value="F" class="calculator-button hex-digit-button">F</button>
                 </div>
             </div>
         </div>
